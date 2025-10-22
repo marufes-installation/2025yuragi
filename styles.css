@@ -1,0 +1,112 @@
+:root{
+    --bg:#0f0f0f;
+    --ink:#111;               /* 濃い本文色 */
+    --muted:#666;
+    --paper:#FAFFF3;          /* Figma右ペインに近い #FAFFF3 */
+    /* タイポスケール（Figma値に近づけつつレスポンシブに） */
+    --fs-xs: clamp(11px, 2.5vw, 12px);
+    --fs-sm: clamp(13px, 3vw, 14px);
+    --fs-md: clamp(14px, 3.2vw, 16px);
+    --fs-lg: clamp(18px, 4vw, 22px);
+    --fs-xl: clamp(24px, 6vw, 32px);
+  }
+  
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    color:var(--ink);
+  }
+  
+  /* ページ中央に390px幅の“端末枠”を置く */
+  .page{
+    min-height:100dvh;
+    display:grid;
+    place-content:center;
+    padding: 24px 12px;
+  }
+  .phone{
+    width:min(390px, 100vw - 24px);
+    background:var(--paper);
+    border-radius: 16px;
+    overflow: clip;
+    box-shadow: 0 10px 40px rgba(0,0,0,.35);
+    position: relative;
+  }
+  
+  /* ヒーロー上部：背景絵を敷く（Figmaのグラデ質感） */
+  .hero{
+    position: relative;
+    padding: 32px 22px 18px;
+    text-align: left;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background: url("assets/image-hero.png") top center / cover no-repeat;
+    opacity:.95;
+    z-index:0;
+  }
+  .hero > *{ position:relative; z-index:1; }
+  
+  .eyebrow{
+    letter-spacing:.2em;
+    font-size: var(--fs-sm);
+    color:#1a1a1a;
+    margin:0 0 6px;
+  }
+  .title{
+    font-size: clamp(28px, 8vw, 36px);
+    line-height:1.2;
+    margin:0 0 8px;
+    font-weight:700;
+  }
+  .credit{
+    font-size: var(--fs-xs);
+    color: var(--muted);
+    margin: 0;
+  }
+  
+  /* セクション */
+  .section{
+    padding: 18px 22px;
+  }
+  .section + .section{ padding-top: 8px; }
+  .section-title{
+    font-size: var(--fs-lg);
+    font-weight:600;
+    margin: 0 0 8px;
+    letter-spacing:.06em;
+  }
+  .body{
+    font-size: var(--fs-md);
+    line-height: 1.9;
+    letter-spacing: .02em;
+    margin:0;
+  }
+  
+  /* 写真ブロック */
+  .photo{
+    margin: 10px 0 0;
+    display: grid;
+    gap: 8px;
+    padding: 0 0 12px;
+  }
+  .photo img{
+    width:100%; height:auto; display:block;
+  }
+  .photo figcaption{
+    font-size: var(--fs-xs);
+    color: var(--muted);
+    text-align:center;
+  }
+  
+  /* フッタ */
+  .foot{
+    padding: 20px 0 28px;
+    text-align:center;
+    color:var(--muted);
+    font-size: var(--fs-xs);
+  }
