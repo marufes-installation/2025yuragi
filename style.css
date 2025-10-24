@@ -99,12 +99,3 @@
   height: 0;
   border-top: calc(3 / 440 * 100cqw) solid #000;
 }
-
-/* タイトルSVG（中央揃え＋背景に同期してスケール） */
-._0-1-0-1-0-1-soul-of-tech {
-  left: 50%;
-  top: calc(810.26 / 440 * 100cqw); /* Figma値から換算 */
-  transform: translateX(-50%);
-  width: calc(340 / 440 * 100cqw);  /* 幅は仮。Figmaの実測値に置き換えてOK */
-  height: auto;
-}
